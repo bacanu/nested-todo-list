@@ -4,7 +4,7 @@ import _ from 'lodash';
 import CheckboxItemComponent from './components/CheckboxItem';
 import ComputedItemComponent from './components/ComputedItem';
 import InputItemComponent from './components/InputItem';
-import InputItem from './components/InputItem';
+import MarkdownBlock from './components/MarkdownBlock';
 
 enum ComputeRule {
   All,

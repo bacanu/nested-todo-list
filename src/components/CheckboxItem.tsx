@@ -1,3 +1,4 @@
+import MarkdownBlock from "./MarkdownBlock";
 
 type Props = {
   checked: boolean,
@@ -14,7 +15,7 @@ function CheckboxItem({ checked, content, setChecked }: Props) {
         type="checkbox"
         onChange={(e) => setChecked(e.target.checked)}
         checked={checked} />
-      <div>{content}</div>
+      <div><MarkdownBlock content={content} /></div>
     </div>
   );
 }

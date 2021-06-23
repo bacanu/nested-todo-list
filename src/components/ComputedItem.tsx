@@ -1,3 +1,5 @@
+import MarkdownBlock from "./MarkdownBlock";
+
 type Props = {
   checked: boolean,
   content: string,
@@ -12,7 +14,7 @@ const ComputedItem: React.FC<Props> = ({ checked, content, children }) => {
         type="checkbox"
         readOnly={true}
         checked={checked} />
-      <div>{content}</div>
+      <div><MarkdownBlock content={content} /></div>
       <div>{children}</div>
     </div>
   );
