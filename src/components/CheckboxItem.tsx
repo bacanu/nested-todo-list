@@ -3,7 +3,7 @@ import MarkdownBlock from "./MarkdownBlock";
 type Props = {
   checked: boolean,
   content: string;
-  setChecked: (isChedcked: boolean) => void;
+  setChecked: (isChecked: boolean) => void;
 };
 
 
