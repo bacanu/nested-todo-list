@@ -117,4 +117,50 @@ function App() {
   );
 }
 
+function TItem({ children, firstInList = false }: any) {
+  return (
+    <div className="item">
+      <div className="control control-1 in">
+        <button className="btn btn-sm btn-secondary me-1">Paste [copy ctx]</button>
+        <button className="btn btn-sm btn-secondary me-1">Add</button>
+      </div>
+      <div className="content">Some content</div>
+      <div className="control control-2 out">
+        <button className="btn btn-sm btn-secondary me-1">Cut</button>
+        <button className="btn btn-sm btn-secondary me-1">Copy</button>
+        <button className="btn btn-sm btn-secondary me-1">Duplicate</button>
+      </div>
+      <div className="list">{children}</div>
+      {children?.length > 0 &&
+        <div className="control-3">
+          <button className="btn btn-sm btn-secondary me-1">New computed</button>
+          <button className="btn btn-sm btn-secondary me-1">New checkbox</button>
+          <button className="btn btn-sm btn-secondary me-1">New Input</button>
+          <button className="btn btn-sm btn-secondary me-1">Paste [copy ctx]</button>
+        </div>}
+    </div>
+  );
+}
+
+function App2() {
+  return (
+    <div className="main">
+
+      <TItem>
+        <TItem></TItem>
+        <TItem></TItem>
+        <TItem>
+          <TItem>
+            <TItem></TItem>
+            <TItem></TItem>
+            <TItem></TItem>
+          </TItem>
+          <TItem></TItem>
+          <TItem></TItem>
+        </TItem>
+      </TItem>
+    </div>
+  );
+}
+
 export default App;

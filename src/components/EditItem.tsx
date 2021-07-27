@@ -1,9 +1,10 @@
+import { FC } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { addChild as addChildAction, changeItemTag, cutItem, Mode, pasteOnTarget, updateItem } from '../slices/formSlice';
 import { RootStore } from '../store';
 import { ComputedItem, ComputeRule, Item, ItemTag } from '../Types';
 
-function AutoExpandTextarea(props: any) {
+const AutoExpandTextarea:FC<any> = (props: any) => {
   return <div className="auto-expand">
     <pre>
       {props.value + " "}
@@ -13,11 +14,11 @@ function AutoExpandTextarea(props: any) {
   </div>;
 }
 
-type HorizontalSelectProps = {
+interface HorizontalSelectProps {
   items: any[],
   onSelect: (val: any) => void;
 };
-function HorizontalSelect({ items, onSelect }: HorizontalSelectProps) {
+const HorizontalSelect:FC<HorizontalSelectProps> = ({ items, onSelect }) => {
 
   return <div className="btn-group">
     {items.map(([name, val, selected]) =>
@@ -30,12 +31,12 @@ function HorizontalSelect({ items, onSelect }: HorizontalSelectProps) {
 }
 
 
-type Props = {
+interface Props {
   item: Item,
   isRoot?: boolean,
 };
 
-function EditItem({ item, isRoot = false }: Props) {
+const EditItem:FC<Props> = ({ item, isRoot = false }) => {
   const dispatch = useDispatch();
   const mode = useSelector((state: RootStore) => state.form.mode);
 
