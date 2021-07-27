@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from 'react-redux';
-import { addChild as addChildAction, cutItem, Mode, pasteOnTarget, updateItem } from '../slices/formSlice';
+import { addChild as addChildAction, changeItemTag, cutItem, Mode, pasteOnTarget, updateItem } from '../slices/formSlice';
 import { RootStore } from '../store';
 import { ComputedItem, ComputeRule, Item, ItemTag } from '../Types';
 
@@ -65,7 +65,7 @@ function EditItem({ item, isRoot = false }: Props) {
     ].map(([name, val]) => [name, val, val === item.tag]));
 
 
-    return <HorizontalSelect items={types} onSelect={(val) => dispatch(updateItem({ ...item, tag: val }))} />;
+    return <HorizontalSelect items={types} onSelect={(val) => dispatch(changeItemTag({item, tag: val}))} />; 
   })();
 
   let children = (() => {
